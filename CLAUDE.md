@@ -6,12 +6,13 @@ folders manually.
 
 ## Skills in this Repository
 
-| Skill                | File                                       | Purpose                                          |
-| -------------------- | ------------------------------------------ | ------------------------------------------------ |
-| **onboarding**       | `.claude/skills/onboarding/SKILL.md`       | Populate `.claude/context/` via interview        |
-| **linkedin-post**    | `.claude/skills/linkedin-post/SKILL.md`    | Draft LinkedIn posts                             |
-| **samples-curation** | `.claude/skills/samples-curation/SKILL.md` | Save and annotate gold-standard content examples |
-| **session-wrap**     | `.claude/skills/session-wrap/SKILL.md`     | Review session, collect feedback, commit work    |
+| Skill                | File                                       | Purpose                                                    |
+| -------------------- | ------------------------------------------ | ---------------------------------------------------------- |
+| **onboarding**       | `.claude/skills/onboarding/SKILL.md`       | Populate `.claude/context/` via interview                  |
+| **linkedin-post**    | `.claude/skills/linkedin-post/SKILL.md`    | Draft LinkedIn posts                                       |
+| **marketing-update** | `.claude/skills/marketing-update/SKILL.md` | Update installed marketing skills to their latest versions |
+| **samples-curation** | `.claude/skills/samples-curation/SKILL.md` | Save and annotate gold-standard content examples           |
+| **session-wrap**     | `.claude/skills/session-wrap/SKILL.md`     | Review session, collect feedback, commit work              |
 
 ## Structure
 
