@@ -6,22 +6,22 @@ Reusable Claude Code skills for setting up and maintaining marketing/content cre
 
 | File | Purpose |
 |------|---------|
-| `.claude/settings.json` | Permissions, hooks, environment variables           |
-| `.claude/skills/cc-init/SKILL.md` | Bootstrap Claude Code configuration skill           |
-| `.claude/skills/cc-optimize/SKILL.md` | Audit and optimize Claude Code configuration skill  |
-| `.claude/skills/cc-update/SKILL.md` | Update skills to latest versions skill              |
-| `.claude/skills/linkedin-post/SKILL.md` | Draft and publish LinkedIn posts                    |
-| `.claude/skills/onboarding/SKILL.md` | Populate .claude/context/ via interview             |
-| `.claude/skills/openspec-apply-change/SKILL.md` | Implement tasks from an OpenSpec change             |
-| `.claude/skills/openspec-archive-change/SKILL.md` | Archive a completed OpenSpec change                 |
-| `.claude/skills/openspec-explore/SKILL.md` | Explore and think through proposed changes          |
-| `.claude/skills/openspec-propose/SKILL.md` | Propose a new change with all artifacts             |
-| `.claude/skills/samples-curation/SKILL.md` | Save and annotate gold-standard content examples    |
-| `.claude/skills/session-wrap/SKILL.md` | Review session, collect feedback, commit work       |
-| `.githooks/pre-commit` | Runs sync-config-table.sh before each commit        |
-| `.gitignore` | Git ignore patterns                                 |
-| `CLAUDE.md` | Project instructions, loaded every message          |
-| `scripts/sync-config-table.sh` | Keeps Key Config Files table in CLAUDE.md in sync   |
+| `.claude/settings.json` | Permissions, hooks, environment variables            |
+| `.claude/skills/cc-init/SKILL.md` | Bootstrap Claude Code configuration skill            |
+| `.claude/skills/cc-optimize/SKILL.md` | Audit and optimize Claude Code configuration skill   |
+| `.claude/skills/cc-update/SKILL.md` | Update skills to latest versions skill               |
+| `.claude/skills/linkedin-post/SKILL.md` | Draft and publish LinkedIn posts                     |
+| `.claude/skills/onboarding/SKILL.md` | Populate .claude/context/ via interview              |
+| `.claude/skills/openspec-apply-change/SKILL.md` | Implement tasks from an OpenSpec change              |
+| `.claude/skills/openspec-archive-change/SKILL.md` | Archive a completed OpenSpec change                  |
+| `.claude/skills/openspec-explore/SKILL.md` | Explore and think through proposed changes           |
+| `.claude/skills/openspec-propose/SKILL.md` | Propose a new change with all artifacts              |
+| `.claude/skills/samples-curation/SKILL.md` | Save and annotate gold-standard content examples     |
+| `.claude/skills/session-wrap/SKILL.md` | Review session, collect feedback, commit work        |
+| `.githooks/pre-commit` | Runs sync-config-table.sh before each commit         |
+| `.gitignore` | Git ignore patterns                                  |
+| `CLAUDE.md` | Project instructions, loaded every message           |
+| `scripts/sync-config-table.sh` | Keeps Key Config Files table in CLAUDE.md in sync    |
 
 ## Structure
 

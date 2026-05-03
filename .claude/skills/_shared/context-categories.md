@@ -108,6 +108,21 @@ shown to users — handle it in a dedicated "check for campaign briefing" step.
 
 ---
 
+### 8. `content-defaults` — Always created by onboarding
+
+What it covers: Project-level output defaults that apply to every deliverable — primarily
+the default output language, but potentially also date format, number format, or currency.
+Kept separate from `writing-style` so that it remains a writable Markdown file even when
+the writing styleguide is delivered as a non-editable PDF.
+
+Recognition signals: Key-value pairs such as "Output language: German (de-DE)", language
+codes, locale strings.
+
+Common file names in target projects:
+`content-defaults.md`, `output-defaults.md`, `project-defaults.md`
+
+---
+
 ## How to use this taxonomy when authoring a skill
 
 1. Identify which categories the skill needs (Required, Recommended, Optional).

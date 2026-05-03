@@ -35,6 +35,7 @@ Read each discovered file. Classify it into one of these categories based on its
 
 | Category                    | What it covers                                              |
 | --------------------------- | ----------------------------------------------------------- |
+| **content-defaults**        | Default output language and other project-level defaults    |
 | **writing-style**           | Tone, vocabulary, phrases to use/avoid, sentence patterns   |
 | **organization-identity**   | What the company does, products, mission, positioning       |
 | **target-audience**         | Personas, goals, challenges, preferred channels             |
@@ -162,7 +163,50 @@ Ask for the path. Read the file and verify it covers the category.
 
 Note it as intentionally absent and continue.
 
-## Step 3: Handle recommended category
+## Step 3: Set content defaults (unconditional)
+
+This step runs regardless of whether a `content-defaults` file already exists.
+
+Check whether a `content-defaults` file is present:
+
+```bash
+find .claude/context/ -type f -name "*.md" 2>/dev/null | xargs grep -l "Output language" 2>/dev/null | head -1
+```
+
+**If a file is found:** read it and show its current contents:
+
+> "I found an existing content-defaults file at `<path>`:
+>
+> ```
+> <file contents>
+> ```
+>
+> Would you like to update it? (yes / no)"
+
+- **No**: keep the existing file and proceed to Step 4.
+- **Yes**: proceed with the interview below and overwrite the file.
+
+**If no file is found:** proceed with the interview.
+
+Ask: "Where should I save the content defaults file?
+(Suggested: `.claude/context/content-defaults.md`)"
+
+Then ask:
+
+> "What is the default output language for all content created in this project?
+> (Examples: German / de-DE, English / en-US, French / fr-FR)"
+
+Write the file:
+
+```markdown
+# Content Defaults
+
+**Output language:** <answer>
+```
+
+After writing, confirm: "✓ Created `.claude/context/<path>`."
+
+## Step 4: Handle recommended category
 
 For the `target-audience` category, if missing:
 
@@ -207,7 +251,7 @@ After writing, confirm: "✓ Created `.claude/context/<path>`."
 
 Handle Options (b) and (c) the same as in Step 2.
 
-## Step 4: Handle optional categories
+## Step 5: Handle optional categories
 
 Ask once, listing both at the same time to minimize questions:
 
@@ -240,7 +284,7 @@ Write the file using the owner's descriptions.
 Note: `reference-samples` is managed by the `samples-curation` skill. Do not create
 it here.
 
-## Step 5: Wire files into CLAUDE.md
+## Step 6: Wire files into CLAUDE.md
 
 Collect all context files that were created or confirmed in Steps 2–4.
 
@@ -256,6 +300,7 @@ CLAUDE.md. Use the file's content (category) to pick the right trigger phrase:
 
 | Category                | @-import trigger                                                  |
 | ----------------------- | ----------------------------------------------------------------- |
+| content-defaults        | `**Read when:** producing any content for this project`           |
 | writing-style           | `**Read when:** producing any written content`                    |
 | organization-identity   | `**Read when:** working on any deliverable for this company`      |
 | target-audience         | `**Read when:** targeting content at a specific audience segment` |
@@ -291,13 +336,14 @@ Then propose adding @-imports for all confirmed context files:
 Show only the @-imports that are missing (already-present ones need no action). Ask
 for confirmation before adding.
 
-## Step 6: Summary
+## Step 7: Summary
 
 Print a final summary:
 
 ```
 Onboarding complete
 ──────────────────────────────────────────────────────
+content-defaults        ✓ .claude/context/<path>
 writing-style           ✓ .claude/context/<path>
 organization-identity   ✗ skipped intentionally
 target-audience         ✓ .claude/context/<path>
