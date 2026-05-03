@@ -6,25 +6,29 @@ Reusable Claude Code skills for setting up and maintaining marketing/content cre
 
 | File | Purpose |
 |------|---------|
-| `.claude/context/requirements/marketing-business-skills-requirements.md` | TODO: add description |
-| `.claude/settings.json` | Permissions, hooks, environment variables             |
-| `.claude/skills/cc-init/SKILL.md` | Bootstrap Claude Code configuration skill             |
-| `.claude/skills/cc-optimize/SKILL.md` | Audit and optimize Claude Code configuration skill    |
-| `.claude/skills/cc-update/SKILL.md` | Update skills to latest versions skill                |
-| `.claude/skills/openspec-apply-change/SKILL.md` | TODO: add description  |
-| `.claude/skills/openspec-archive-change/SKILL.md` | TODO: add description  |
-| `.claude/skills/openspec-explore/SKILL.md` | TODO: add description  |
-| `.claude/skills/openspec-propose/SKILL.md` | TODO: add description  |
-| `.githooks/pre-commit` | Runs sync-config-table.sh before each commit          |
-| `.gitignore` | Git ignore patterns                                   |
-| `CLAUDE.md` | Project instructions, loaded every message            |
-| `scripts/sync-config-table.sh` | Keeps Key Config Files table in CLAUDE.md in sync     |
+| `.claude/context/requirements/marketing-business-skills-requirements.md` | TODO: add description                               |
+| `.claude/settings.json` | Permissions, hooks, environment variables           |
+| `.claude/skills/cc-init/SKILL.md` | Bootstrap Claude Code configuration skill           |
+| `.claude/skills/cc-optimize/SKILL.md` | Audit and optimize Claude Code configuration skill  |
+| `.claude/skills/cc-update/SKILL.md` | Update skills to latest versions skill              |
+| `.claude/skills/linkedin-post/SKILL.md` | Draft and publish LinkedIn posts                    |
+| `.claude/skills/onboarding/SKILL.md` | Populate .claude/context/ via interview             |
+| `.claude/skills/openspec-apply-change/SKILL.md` | Implement tasks from an OpenSpec change             |
+| `.claude/skills/openspec-archive-change/SKILL.md` | Archive a completed OpenSpec change                 |
+| `.claude/skills/openspec-explore/SKILL.md` | Explore and think through proposed changes          |
+| `.claude/skills/openspec-propose/SKILL.md` | Propose a new change with all artifacts             |
+| `.claude/skills/samples-curation/SKILL.md` | Save and annotate gold-standard content examples    |
+| `.claude/skills/session-wrap/SKILL.md` | Review session, collect feedback, commit work       |
+| `.githooks/pre-commit` | Runs sync-config-table.sh before each commit        |
+| `.gitignore` | Git ignore patterns                                 |
+| `CLAUDE.md` | Project instructions, loaded every message          |
+| `scripts/sync-config-table.sh` | Keeps Key Config Files table in CLAUDE.md in sync   |
 
 ## Structure
 
 ```
 .claude/skills/[skill-name]/SKILL.md   one directory per skill
-install.sh                              TODO: distributes skills to target projects
+install.sh                              Distributes skills to target projects
 ```
 
 ## SKILL.md Frontmatter
@@ -46,8 +50,97 @@ argument-hint: "[optional: describe expected args]"
 
 ## Commands
 
-- TODO: `bash install.sh` — once `install.sh` exists, installs skills into target project
+- `bash install.sh [--all] [--update] [--target <path>] [skill-name ...]` — installs skills into a target project
 - No build or test commands yet; validate SKILL.md frontmatter by inspection
+
+## Context Architecture
+
+Marketing skills follow a three-level context architecture:
+
+| Level              | Location                                           | What goes here                                                                                                                |
+| ------------------ | -------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
+| **Company scope**  | `.claude/context/`                                 | Brand voice, buyer personas, company profile, storytelling frameworks, curated samples — applies to all work for this company |
+| **Format scope**   | `.claude/skills/<skill-name>/`                     | Structure rules, length limits, tone calibrations specific to one output type                                                 |
+| **Campaign scope** | Regular project subfolders (e.g., `campaigns/q3/`) | Campaign briefings, key messages, one-off constraints for a specific initiative                                               |
+
+### Hierarchical CLAUDE.md Pattern
+
+For a marketing monorepo with campaign subfolders, place a `CLAUDE.md` at each directory level. Claude Code reads CLAUDE.md files up the directory tree, so a session in any subfolder automatically inherits all relevant context.
+
+```
+my-marketing-project/
+├── CLAUDE.md                   ← @-imports all .claude/context/ files
+├── .claude/
+│   ├── context/
+│   │   ├── company-profile.md
+│   │   ├── brand-voice.md
+│   │   └── buyer-personas.md
+│   └── skills/
+│       └── linkedin-post/
+│           └── SKILL.md
+└── campaigns/
+    └── q3-product-launch/
+        ├── CLAUDE.md           ← @-imports campaign-specific files
+        └── brief.md
+```
+
+**Root CLAUDE.md** (project level) — imports company-scope context:
+
+```markdown
+@.claude/context/company-profile.md **Read when:** working on any deliverable for this company
+@.claude/context/brand-voice.md **Read when:** producing any written content
+@.claude/context/buyer-personas.md **Read when:** targeting content at a specific audience segment
+```
+
+**Campaign CLAUDE.md** (campaign subfolder) — imports campaign-scope context:
+
+```markdown
+@brief.md **Read when:** creating content for this campaign
+@key-messages.md **Read when:** writing copy or posts for this initiative
+```
+
+## Authoring a New Skill
+
+To add a new marketing skill:
+
+1. Create `.claude/skills/<skill-name>/SKILL.md` with the frontmatter template below
+2. Add progressive disclosure `@`-imports for every context file the skill reads
+3. Optionally add format-scope reference files inside the skill folder; reference them via `@`-imports from SKILL.md
+
+### SKILL.md Template for Marketing Skills
+
+```yaml
+---
+name: my-skill-name
+description: >
+  Use this skill when [specific trigger]. Invoke when the user asks to [action].
+  Also triggered by [alternative phrasings].
+allowed-tools: Read, Write, Edit, Bash
+argument-hint: "[describe expected args, e.g., path to campaign brief]"
+---
+```
+
+After the frontmatter, add context declarations:
+
+```markdown
+@.claude/context/brand-voice.md **Read when:** producing any written content
+@.claude/context/company-profile.md **Read when:** the skill needs company identity information
+@.claude/skills/my-skill-name/format-guidelines.md **Read when:** starting this skill
+```
+
+### Required in every output-format skill
+
+- Context declarations via `@`-imports (FR-010)
+- Missing-context notification before any output — name the file, explain its purpose, suggest how to create it (FR-011)
+- Campaign briefing detection: look for `brief.md` in cwd or accept a path argument (FR-022)
+- Feedback step at the end that logs corrections to `.claude/learnings.md` tagged with the skill name (FR-023)
+
+### Authoring rules
+
+- List only tools the skill actually uses in `allowed-tools` — never over-grant
+- Format-scope guidelines go inside the skill folder, never in `.claude/context/`
+- No absolute filesystem paths anywhere in the SKILL.md
+- No company-specific content in the skill — that belongs in `.claude/context/` of the target project
 
 ## Don't
 
