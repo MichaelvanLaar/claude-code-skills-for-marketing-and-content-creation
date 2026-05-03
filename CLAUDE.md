@@ -6,14 +6,18 @@ Reusable Claude Code skills for setting up and maintaining marketing/content cre
 
 | File | Purpose |
 |------|---------|
-| `.claude/settings.json` | Permissions, hooks, environment variables           |
-| `.claude/skills/cc-init/SKILL.md` | Bootstrap Claude Code configuration skill           |
-| `.claude/skills/cc-optimize/SKILL.md` | Audit and optimize Claude Code configuration skill  |
-| `.claude/skills/cc-update/SKILL.md` | Update skills to latest versions skill              |
-| `.githooks/pre-commit` | Runs sync-config-table.sh before each commit        |
-| `.gitignore` | Git ignore patterns                                 |
-| `CLAUDE.md` | Project instructions, loaded every message          |
-| `scripts/sync-config-table.sh` | Keeps Key Config Files table in CLAUDE.md in sync   |
+| `.claude/settings.json` | Permissions, hooks, environment variables            |
+| `.claude/skills/cc-init/SKILL.md` | Bootstrap Claude Code configuration skill            |
+| `.claude/skills/cc-optimize/SKILL.md` | Audit and optimize Claude Code configuration skill   |
+| `.claude/skills/cc-update/SKILL.md` | Update skills to latest versions skill               |
+| `.claude/skills/openspec-apply-change/SKILL.md` | TODO: add description |
+| `.claude/skills/openspec-archive-change/SKILL.md` | TODO: add description |
+| `.claude/skills/openspec-explore/SKILL.md` | TODO: add description |
+| `.claude/skills/openspec-propose/SKILL.md` | TODO: add description |
+| `.githooks/pre-commit` | Runs sync-config-table.sh before each commit         |
+| `.gitignore` | Git ignore patterns                                  |
+| `CLAUDE.md` | Project instructions, loaded every message           |
+| `scripts/sync-config-table.sh` | Keeps Key Config Files table in CLAUDE.md in sync    |
 
 ## Structure
 
