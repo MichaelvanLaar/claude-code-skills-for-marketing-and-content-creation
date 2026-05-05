@@ -1,3 +1,0 @@
-#!/usr/bin/env bash
-# Keep CLAUDE.md config file table in sync
-bash scripts/sync-config-table.sh
