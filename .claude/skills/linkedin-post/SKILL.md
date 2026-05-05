@@ -9,6 +9,8 @@ argument-hint: "[optional: path to campaign briefing file]"
 ---
 
 @.claude/skills/linkedin-post/format-guidelines.md **Read when:** starting this skill
+@.claude/skills/_shared/storytelling-frameworks.md **Read when:** selecting a narrative framework in Step 3b
+@.claude/skills/_shared/persuasion-principles.md **Read when:** selecting persuasion principles in Step 3c
 
 # LinkedIn Post Skill
 
@@ -68,15 +70,30 @@ If the owner has not specified a topic or goal for the post, ask:
 
 Wait for the answer, then proceed.
 
+## Step 3b: Select a storytelling framework
+
+Read `.claude/skills/_shared/storytelling-frameworks.md` and follow the selection
+process described there. Apply the chosen framework as the structural spine of
+the post.
+
+## Step 3c: Select persuasion principles
+
+Read `.claude/skills/_shared/persuasion-principles.md` and follow its selection
+process. Pick 1–3 principles that fit the post's goal and the reader's state,
+plus a pre-suasive opener strategy. Note the choice in working notes (e.g.,
+"Using **Authority + Social Proof**, opener primes credibility").
+
 ## Step 4: Generate the post
 
 Produce a complete LinkedIn post that:
 
-- Opens with a strong hook in the first 1–2 lines (visible before the "see more" fold)
+- Opens with a strong hook (max 190 chars, starts with an emoji)
+- Is structured according to the framework chosen in Step 3b (if applicable)
 - Includes a body delivering the substance the hook promises
-- Ends with a specific, singular CTA
-- Includes 3–5 hashtags after the CTA (CamelCase, separated from body by a blank line)
-- Stays within the recommended character target (1,200–1,800 characters)
+- Ends with a specific, singular CTA that is easy to answer
+- Uses ~6 emojis placed at natural pauses (omit if brand voice prohibits)
+- Omits hashtags by default (add 1–2 only if the campaign requires them)
+- Stays within the recommended character target (1,242–2,500 characters)
 - Reflects tone and vocabulary from any loaded writing-style context
 - Addresses the audience from any loaded target-audience context
 - Does NOT embed a link in the post body (reference "first comment" if a link is needed)

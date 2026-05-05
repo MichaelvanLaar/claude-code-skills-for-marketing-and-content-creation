@@ -10,11 +10,11 @@ generated post regardless of campaign briefing or brand voice.
 | Constraint         | Limit                  | Notes                                                        |
 | ------------------ | ---------------------- | ------------------------------------------------------------ |
 | Hard maximum       | 3,000 characters       | LinkedIn truncates at 3,000                                  |
-| Recommended target | 1,200–1,800 characters | Optimal engagement range; shorter posts underperform at <600 |
+| Recommended target | 1,242–2,500 characters | Optimal engagement range; shorter posts underperform at <600 |
 | Mobile sweet spot  | ≤1,300 characters      | Displays without scroll on most mobile viewports             |
 
-Count characters including spaces, newlines, and hashtags. Aim for the recommended
-target. Flag if the draft exceeds 2,500 characters.
+Count characters including spaces and newlines. Aim for the recommended target.
+Flag if the draft exceeds 2,500 characters.
 
 ---
 
@@ -30,6 +30,8 @@ the reader expands the post.
 Rules:
 
 - Open with the strongest claim, question, or tension — never bury the lead
+- The hook line must be controversial or unexpected; max 190 characters including
+  the opening emoji
 - Avoid openers: "I'm excited to share…", "Proud to announce…", "Just wanted to…"
 - Prefer concrete specifics over vague praise: "We cut deploy time by 40%" beats
   "We've been working hard on improving our process"
@@ -43,7 +45,10 @@ Delivers the substance the hook promises.
 
 Rules:
 
-- Short paragraphs: 1–3 lines each, separated by blank lines
+- Short paragraphs: 1–3 lines each, separated by blank lines; aim for at least
+  14 paragraphs total across hook, body, and CTA
+- Sentence length: 10–19 words per paragraph on average
+- Readability: target 5th–7th grade level; prefer short, common words
 - Use line breaks (not bullet points) as the primary rhythm device; bullets are
   acceptable for lists of 3+ parallel items
 - Maintain forward momentum: each paragraph should earn the next
@@ -57,7 +62,9 @@ The final line or short paragraph. Every post needs one.
 Rules:
 
 - One CTA per post — do not stack multiple asks
-- Make it specific: "Drop your answer in the comments", "DM me the word GUIDE",
+- Make it specific and easy to answer — a focused question drives +72 % more
+  engagement than a vague ask
+- Good examples: "Drop your answer in the comments", "DM me the word GUIDE",
   "Link in the first comment"
 - Avoid vague CTAs: "Let me know what you think", "Share if you agree"
 - CTA should match the post's purpose: engagement, lead gen, or awareness
@@ -66,13 +73,15 @@ Rules:
 
 ## Hashtags
 
+Current algorithm data (as of 2026-04) indicates hashtags **reduce** organic reach
+on LinkedIn. Default to omitting them.
+
 | Rule      | Guideline                                                               |
 | --------- | ----------------------------------------------------------------------- |
-| Count     | 3–5 hashtags per post                                                   |
-| Placement | After the CTA, on a new line, separated from body by a blank line       |
-| Mix       | 1 broad (#Marketing), 1–2 niche (#B2BMarketing), 1 brand (optional)     |
+| Default   | Omit hashtags entirely                                                  |
+| Exception | Use 1–2 hashtags only if explicitly requested or required by campaign   |
 | Format    | CamelCase for multi-word tags (#ContentMarketing not #contentmarketing) |
-| Avoid     | Strings of 10+ tags; irrelevant trending tags                           |
+| Avoid     | Strings of 3+ tags; irrelevant trending tags                            |
 
 ---
 
@@ -100,14 +109,34 @@ Regardless of purpose:
 
 ## Formatting Rules
 
-- **Emojis**: 0–2 per post; use only if consistent with brand voice; never use
-  as bullet substitutes in professional/B2B contexts
+- **Emojis**: ~6 per post for optimal reach; 1 opening emoji in the hook line is
+  required; place others at natural pauses in the body; never use as bullet
+  substitutes in professional/B2B contexts; omit if brand voice prohibits them
 - **Bold / italic**: Not natively supported in LinkedIn posts — do not attempt
   to fake bold with Unicode lookalikes
 - **Links**: Do not embed links in the post body; put them in the first comment
   and reference that in the CTA ("Link in the first comment ↓")
-- **Line spacing**: Blank line between every paragraph; double blank line before
-  the hashtag block
+- **Line spacing**: Blank line between every paragraph
+
+---
+
+## Punctuation and Rhetoric
+
+- **No trailing em-dashes.** Do not use an em-dash to attach a trailing clause,
+  adverbial, or list to the preceding sentence. Use a comma, colon, or a new
+  sentence instead. Em-dashes are reserved for true parenthetical inserts and
+  must always appear in pairs.
+  - ✅ "Many teams underestimate the time for code reviews, until the release
+    approaches."
+  - ✅ Paired insert: "Our team — twelve engineers across three time zones — took
+    three months."
+  - ❌ "Many teams underestimate the time for code reviews — until the release
+    approaches."
+- **No rhetorical antitheses as a stylistic device.** Avoid "Not X, but Y" and
+  "X, not Y" patterns used purely for a punchy effect. Only contrast two things
+  when they genuinely represent distinct alternatives.
+  - ✅ "Good code reviews take time, attention, and a clear commitment to quality."
+  - ❌ "Good code reviews aren't a control ritual — they're real teamwork."
 
 ---
 
@@ -115,10 +144,13 @@ Regardless of purpose:
 
 Before presenting output, verify:
 
-- [ ] First two lines work as a standalone hook
-- [ ] Character count is within the recommended target (1,200–1,800)
-- [ ] CTA is specific and singular
-- [ ] 3–5 hashtags, placed after the CTA, in CamelCase
+- [ ] First two lines work as a standalone hook (max 190 chars, opens with emoji)
+- [ ] Character count is within the recommended target (1,242–2,500)
+- [ ] At least 14 short paragraphs; sentences average 10–19 words
+- [ ] ~6 emojis placed at natural pauses (skip if brand voice prohibits)
+- [ ] CTA is specific, singular, and easy to answer
+- [ ] No hashtags (or max 1–2 if campaign requires)
 - [ ] No link in the post body
+- [ ] No trailing em-dashes; no rhetorical antitheses used as stylistic devices
 - [ ] Tone is consistent with brand voice (if brand-voice.md is present)
 - [ ] No exclamation marks (or max 1 in launch posts)
