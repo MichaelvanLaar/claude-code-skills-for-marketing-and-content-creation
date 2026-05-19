@@ -113,7 +113,7 @@ content is mixing incompatible values (e.g., TOFU awareness post with a BOFU
      enterprise; technical buyer vs. executive sponsor) when the context
      supports it.
    - **Content goal:** thought leadership · awareness · lead generation ·
-     nurturing · conversion · retention / customer success.
+     nurturing · conversion · retention.
    - **Funnel stage:** TOFU · MOFU · BOFU.
    - **Audience expertise:** novice · familiar · expert.
 3. Present a one-line inference summary, for example:
@@ -135,9 +135,7 @@ If the inference is ambiguous (the context genuinely does not support a
 confident guess), ask the owner the missing question directly rather than
 guessing.
 
-## Step 4: Determine the article topic, type, and any format-specific
-
-requirements
+## Step 4: Determine the article topic and format-specific requirements
 
 If the owner has not specified a topic, ask:
 

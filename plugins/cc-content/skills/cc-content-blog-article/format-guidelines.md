@@ -256,24 +256,21 @@ a demo" CTA).
 
 ### By content goal
 
-| Goal                | Length / depth                                                 | Proof type                                                                                                         | CTA directness                            | Promotional density  |
-| ------------------- | -------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------ | ----------------------------------------- | -------------------- |
-| Thought leadership  | 800–1,800 words; argument density over breadth                 | Original research, proprietary data, defended POV, explicit disagreement                                           | None to soft (subscribe, related read)    | Near zero            |
-| Awareness           | 1,300–2,600 words; depends on intent                           | Third-party stats, accepted frameworks, industry benchmarks                                                        | Soft (newsletter, related read)           | Low                  |
-| Lead generation     | 1,500–2,500 words; gated asset is the unlock                   | Mid-funnel proof types; previews of the gated asset's data                                                         | Medium ("Download the template")          | Low to medium        |
-| Nurturing           | 600–1,500 words                                                | Practitioner perspectives, peer stories, contextual case studies                                                   | Soft (next-in-sequence, deeper resource)  | Low                  |
-| Conversion          | 1,500–3,000 words for comparison; shorter for product-specific | Named-customer case studies with quantified outcomes; ROI calculators; pricing transparency; security / compliance | Hard ("Demo", "Trial", "Talk to sales")   | High and appropriate |
-| Retention / success | Task-dependent (800–2,000+ words)                              | Documentation depth; customer workflows; advanced playbooks                                                        | Zero-promotional (deeper docs, community) | Near zero            |
+| Goal               | Length / depth                                                 | Proof type                                                                                                         | CTA directness                            | Promotional density  |
+| ------------------ | -------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------ | ----------------------------------------- | -------------------- |
+| Thought leadership | 800–1,800 words; argument density over breadth                 | Original research, proprietary data, defended POV, explicit disagreement                                           | None to soft (subscribe, related read)    | Near zero            |
+| Awareness          | 1,300–2,600 words; depends on intent                           | Third-party stats, accepted frameworks, industry benchmarks                                                        | Soft (newsletter, related read)           | Low                  |
+| Lead generation    | 1,500–2,500 words; gated asset is the unlock                   | Mid-funnel proof types; previews of the gated asset's data                                                         | Medium ("Download the template")          | Low to medium        |
+| Nurturing          | 600–1,500 words                                                | Practitioner perspectives, peer stories, contextual case studies                                                   | Soft (next-in-sequence, deeper resource)  | Low                  |
+| Conversion         | 1,500–3,000 words for comparison; shorter for product-specific | Named-customer case studies with quantified outcomes; ROI calculators; pricing transparency; security / compliance | Hard ("Demo", "Trial", "Talk to sales")   | High and appropriate |
+| Retention          | Task-dependent (800–2,000+ words)                              | Documentation depth; customer workflows; advanced playbooks                                                        | Zero-promotional (deeper docs, community) | Near zero            |
 
 A critical caveat for **lead generation**: Demand Gen Report's 2024 data shows 51% of
 B2B buyers find vendor content "too generic and irrelevant." Gate only content that is
 genuinely exclusive, hard-to-produce, or interactive (original research, calculators,
 substantive interactive assets). Rebranded checklists do not justify a gate.
 
-**Framework fit by goal:** AIDA for awareness; PAS / BAB for lead-gen and MOFU; PAS + FAB
-
-- 4Ps for conversion; StoryBrand for case studies and nurture; JTBD as a topic-selection
-  lens across all goals. See the shared `storytelling-frameworks.md` for selection.
+**Framework fit by goal:** AIDA for awareness; PAS or BAB for lead-gen and MOFU; PAS, FAB, and 4Ps for conversion; StoryBrand for case studies and nurture; JTBD as a topic-selection lens across all goals. See the shared `storytelling-frameworks.md` for selection.
 
 ### By funnel stage (TOFU / MOFU / BOFU)
 
